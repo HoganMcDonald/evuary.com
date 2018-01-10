@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
   profile_photo: {
     type: String,
     required: false
+  },
+  fb_url: {
+    type: String,
+    required: true
   }
 });
 

@@ -6,17 +6,18 @@ passport.use(new Strategy({
    clientID: process.env.CLIENT_ID,
    clientSecret: process.env.CLIENT_SECRET,
    callbackURL: (process.env.NODE_ENV === 'development') ? 'http://localhost:3000/api/login/return' : 'http://evuary.com/api/login/return',
-   profileFields: ['id', 'name', 'picture.type(small)', 'displayName']
+   profileFields: ['id', 'name', 'picture.type(small)', 'displayName', 'profileUrl']
  },
  function(accessToken, refreshToken, profile, done) {
-   User.findOne({ 'facebook.id': profile.id }, function (err, user) {
-     console.log('==============', profile);
+   User.findOne({ 'fb_id': profile.id }, function (err, user) {
+     console.log('===============', profile);
      if (err) { return done(err) }
      if (!user) {
        user = new User({
          fb_id: profile.id,
-         name: profile.displayName,
-         profile_photo: profile.photos[0].value
+         name: profile.name.givenName,
+         profile_photo: profile.photos[0].value,
+         fb_url: profile.profileUrl
        })
        user.save(function (err) {
          if (err) console.log(err)
