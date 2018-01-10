@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const login = require('./controllers/login.controller');
+const comment = require('./controllers/comment.controller');
 
 // routes at /api
 router.route('/login')
@@ -10,5 +11,7 @@ router.route('/login/return')
 
 router.route('/profile')
   .get(login.user)
+
+router.route('/comments')
 
 module.exports = router;

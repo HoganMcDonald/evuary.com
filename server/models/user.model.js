@@ -1,8 +1,8 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
-const commentSchema = new mongoose.Schema({
-  user_id: {
+const userSchema = new mongoose.Schema({
+  fb_id: {
     type: String,
     required: true
   },
@@ -10,13 +10,15 @@ const commentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  content: {
-    type: String,
-    required: true
-  },
-  date_posted: {
+  date_signed_up: {
     type: Date,
     required: true,
     default: Date.now
+  },
+  profile_photo: {
+    type: String,
+    required: false
   }
 });
+
+module.exports = mongoose.model('users', userSchema);

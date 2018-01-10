@@ -4,8 +4,17 @@ require('dotenv').config();
 // modules
 const express = require('express');
 const passport = require('./server/models/facebookStrategy');
+const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
+
+// connect to db
+const db = mongoose.connect(process.env.MONGODB_URI).connection;
+db.on('error', (err)=>
+  console.error.bind(console, 'connection error:', err));
+db.once('open', ()=> {
+  console.log('mongodb connection is open')
+});
 
 // middleware
 app.use(express.static('public'));
