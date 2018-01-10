@@ -2,7 +2,7 @@
   "name": "evuary.com",
   "version": "1.0.0",
   "description": "A web app for celebrating Evi's birthday.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha"
   },
@@ -25,6 +25,7 @@
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-beta.3",
     "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "mongoose": "^4.13.9",
