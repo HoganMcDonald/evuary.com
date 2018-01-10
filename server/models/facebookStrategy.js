@@ -7,6 +7,7 @@ passport.use(new Strategy({
     callbackURL: (process.env.NODE_ENV === 'development') ? 'http://localhost:3000/api/login/return' : 'http://evuary.com/api/login/return'
   },
   function(accessToken, refreshToken, profile, cb) {
+    console.log('strategy cb hit');
     return cb(null, profile);
 }));
 
