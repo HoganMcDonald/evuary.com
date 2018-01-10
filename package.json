@@ -1,0 +1,47 @@
+{
+  "name": "evuary.com",
+  "version": "1.0.0",
+  "description": "A web app for celebrating Evi's birthday.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoganMcDonald/evuary.com.git"
+  },
+  "keywords": [
+    "birthday",
+    "february",
+    "extra"
+  ],
+  "author": "Hogan McDonald",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoganMcDonald/evuary.com/issues"
+  },
+  "homepage": "https://github.com/HoganMcDonald/evuary.com#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.3",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-uglify": "^3.0.0",
+    "run-sequence": "^2.2.1"
+  }
+}
