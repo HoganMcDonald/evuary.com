@@ -1,3 +1,64 @@
 #index
   margin: 0
   width: 100%
+  main
+    .landing
+      height: 85vh
+      display: flex
+      align-items: center
+      justify-content: center
+      .grad-background
+        width: 100%
+        height: 50%
+        position: absolute
+        top: 0
+        background: linear-gradient(45deg, #7be7d7 1%, #7be7d7 40%, #7be7d7 40%, #86a4e3 100%)
+      .landing-img
+        max-width: 650px
+        margin: 0px 100px
+        border: solid 1px black
+        transition: transform 400ms
+        transition-timing-function: ease-out
+        .site-header
+          position: absolute
+          text-transform: uppercase
+          top: 50%
+          left: -100px
+          transition: transform 400ms
+          transition-timing-function: ease-out
+        .img-fluid
+          transition: transform 400ms
+          transition-timing-function: ease-out
+    nav
+      height: 15vh
+      display: flex
+      align-items: center
+      justify-content: center
+    .about
+      height: 100vh
+      background-color: rgb(217, 199, 233)
+    .comments
+      height: 100vh
+      background-color: rgb(199, 233, 222)
+  footer
+
+.position1
+  transform: translate(-20px, -20px)
+  .site-header
+    transform: translateY(-50%)
+  .img-fluid
+    transform: translate(40px, 40px)
+
+.position2
+  transform: translate(20px, 20px)
+  .site-header
+    transform: translateY(-50%) translate(550px, 140px)
+  .img-fluid
+    transform: translate(-40px, -40px)
+
+.position3
+  transform: translate(20px, -20px)
+  .site-header
+    transform: translateY(-50%) translate(200px, -250px)
+  .img-fluid
+    transform: translate(-40px, 40px)
