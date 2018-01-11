@@ -8,7 +8,7 @@
     <link rel="stylesheet" async href="/styles/main.min.css">
   </head>
 
-  <body id="index" ng-controller="evuary" ng-init="getUser()">
+  <body id="index" ng-controller="evuary" ng-init="getUser(); getComments()">
 
     <main>
 
@@ -44,7 +44,8 @@
           </ul>
         </div>
 
-        <a ng-if="user" class="navbar-brand" ng-href="{{user.fb_url}}">
+        <a ng-if="user.name" class="navbar-brand" ng-href="{{user.fb_url}}">
+          <small>{{user.name}}</small>&nbsp;
           <img ng-src="{{user.profile_photo}}" width="30" height="30" alt="Didn't work">
         </a>
       </nav>
@@ -64,8 +65,8 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <a href="/api/login"><button type="button" id="fbButton" class="btn btn-primary" data-dismiss="modal"
-                ng-if="login">Login with Facebook</button></a>
+              <a href="/api/login"><button type="button" id="fbButton" class="btn btn-primary" data-dismiss="modal">
+                Login with Facebook</button></a>
             </div>
           </div>
         </div>
@@ -86,7 +87,20 @@
 
       <!-- message board -->
       <div id="comments" class="comments">
+        <div class="form">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Leave a Comment</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="comment"></textarea>
+              <button type="submit" class="btn btn-secondary" ng-click="postComment()">Post</button>
+            </div>
+          </form>
+        </div>
+        <div class="display">
+          <div class="container">
 
+          </div>
+        </div>
       </div>
 
     </main>

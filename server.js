@@ -7,6 +7,7 @@ const passport = require('./server/models/facebookStrategy');
 const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
 
 // connect to db
 const db = mongoose.connect(process.env.MONGODB_URI).connection;
@@ -20,7 +21,8 @@ db.once('open', ()=> {
 app.use(express.static('public'));
 app.use(require('morgan')('combined'));
 app.use(require('cookie-parser')());
-app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());

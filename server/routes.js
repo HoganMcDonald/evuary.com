@@ -13,5 +13,7 @@ router.route('/profile')
   .get(login.user)
 
 router.route('/comments')
+  .get(comment.all)
+  .post(login.verify, comment.new)
 
 module.exports = router;

@@ -2,11 +2,7 @@ const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new mongoose.Schema({
-  user_id: {
-    type: String,
-    required: true
-  },
-  name: {
+  fb_id: {
     type: String,
     required: true
   },
@@ -18,5 +14,19 @@ const commentSchema = new mongoose.Schema({
     type: Date,
     required: true,
     default: Date.now
+  },
+  name: {
+    type: String,
+    required: true
+  },
+  profile_photo: {
+    type: String,
+    required: false
+  },
+  fb_url: {
+    type: String,
+    required: true
   }
 });
+
+module.exports = mongoose.model('comments', commentSchema);

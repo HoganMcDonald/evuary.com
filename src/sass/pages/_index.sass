@@ -42,8 +42,28 @@
         max-width: 700px
     .comments
       height: 100vh
-      background-color: rgb(199, 233, 222)
-  footer
+      // background-color: rgb(199, 233, 222)
+      display: grid
+      grid-template-columns: 30% 70%
+      .form
+        background: linear-gradient(45deg, #7ae7d7 1%, #7ae7d7 40%, #7be7d7 40%, #86a4e3 100%)
+        display: flex
+        align-items: center
+        justify-content: center
+        form
+          text-align: center
+          width: 60%
+          textarea
+            resize: none
+            margin-bottom: 18px
+      .display
+        display: flex
+        align-items: center
+        justify-content: center
+        .container
+          border: solid 1px #dedede
+          width: 80%
+          height: 80%
 
 .position1
   transform: translate(-20px, -20px)
