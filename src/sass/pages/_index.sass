@@ -42,7 +42,6 @@
         max-width: 700px
     .comments
       height: 100vh
-      // background-color: rgb(199, 233, 222)
       display: grid
       grid-template-columns: 30% 70%
       .form
@@ -64,6 +63,27 @@
           border: solid 1px #dedede
           width: 80%
           height: 80%
+          overflow-y: scroll
+          border-radius: 5px
+          .comment
+            margin: 10px 0px
+            display: grid
+            grid-template-columns: 30px 70px auto 20px
+            grid-column-gap: 10px
+            img
+              height: 30px
+              border-radius: 50%
+            .name
+              font-weight: 700
+              color: #797979
+              margin-top: 7px
+            .text
+              margin-top: 7px
+            .delete
+              margin-top: 7px
+              cursor: pointer
+              user-select: none
+              justify-self: center
 
 .position1
   transform: translate(-20px, -20px)
