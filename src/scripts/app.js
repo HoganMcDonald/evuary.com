@@ -48,4 +48,10 @@ app.controller('evuary', ['$scope', '$http' ,function($scope, $http) {
     }
   } // postComment()
 
+  $scope.formatDate = (date)=> {
+    let day = moment(date).fromNow('minute');
+    console.log(day);
+    return day;
+  }
+
 }]);

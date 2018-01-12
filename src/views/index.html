@@ -98,7 +98,8 @@
         </div>
         <div class="display">
           <div class="container">
-            <div ng-repeat="comment in comments" class="comment">
+            <div ng-repeat="comment in comments | orderBy : comment.date_posted : true" class="comment">
+              <small class="date">{{formatDate(comment.date_posted)}}</small>
               <a ng-href="{{comment.fb_url}}"><img ng-src="{{comment.profile_photo}}"></a>
               <small class="name">{{comment.name}}:</small>
               <small class="text">{{comment.content}}</small>
