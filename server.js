@@ -39,6 +39,11 @@ app.route('/')
     res.sendFile(path.resolve('public/views/index.min.html'));
   });
 
+app.route('/privacy')
+  .get((req, res)=> {
+    res.sendFile(path.resolve('public/views/privacy.min.html'))
+  })
+
 app.use('/api', require('./server/routes.js'));
 
 // server
