@@ -34,7 +34,7 @@ app.controller('evuary', ['$scope', '$http' ,function($scope, $http) {
   }
 
   $scope.postComment = ()=> {
-    if ($scope.user.name && $scope.comment.length > 0) {
+    if (!$scope.login && $scope.comment.length > 0) {
       $http.post('/api/comments', {
         content: $scope.comment
       })
