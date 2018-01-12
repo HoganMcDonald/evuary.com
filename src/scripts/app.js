@@ -15,7 +15,6 @@ app.controller('evuary', ['$scope', '$http' ,function($scope, $http) {
           $scope.login = false;
           $scope.user = res.data;
         }
-        console.log(res.data);
       })
       .catch( err => {
         console.error(err);
@@ -26,7 +25,6 @@ app.controller('evuary', ['$scope', '$http' ,function($scope, $http) {
     $http.get('/api/comments')
       .then( res => {
         $scope.comments = res.data;
-        console.log($scope.comments);
       })
       .catch( err => {
         console.error(err);
@@ -48,10 +46,29 @@ app.controller('evuary', ['$scope', '$http' ,function($scope, $http) {
     }
   } // postComment()
 
-  $scope.formatDate = (date)=> {
+  $scope.formatDate = date => {
     let day = moment(date).fromNow('minute');
-    console.log(day);
     return day;
   }
+
+  $scope.stageDelete = comment => {
+    $scope.deleteQueue = comment;
+  }
+
+  $scope.deleteComment = () => {
+    if ($scope.deleteQueue && !$scope.login) {
+      $http.delete(`/api/comments/${$scope.deleteQueue._id}`)
+        .then( res => {
+          console.log(res);
+          $scope.deleteQueue = undefined;
+          $scope.getComments();
+        })
+        .catch( err => {
+          console.error(err);
+        });
+    } else {
+      console.log($scope.deleteQueue, $scope.login);
+    }
+  } // deleteComment()
 
 }]);

@@ -103,7 +103,11 @@
               <a ng-href="{{comment.fb_url}}"><img ng-src="{{comment.profile_photo}}"></a>
               <small class="name">{{comment.name}}:</small>
               <small class="text">{{comment.content}}</small>
-              <a href="#" data-toggle="modal" data-target="#deleteModal"><small class="delete" ng-if="comment.fb_id === user.fb_id"><span class="badge badge-secondary">&times;</span></small></a>
+              <a href="#comments" data-toggle="modal" data-target="#deleteModal" ng-click="stageDelete(comment)" ng-if="comment.fb_id === user.fb_id">
+                <small class="delete">
+                  <span class="badge badge-secondary">&times;</span>
+                </small>
+              </a>
             </div>
           </div>
         </div>
@@ -123,7 +127,7 @@
               <p>Are you sure you want to delete your comment?</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteComment()">Delete</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>

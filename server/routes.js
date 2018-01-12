@@ -16,4 +16,7 @@ router.route('/comments')
   .get(comment.all)
   .post(login.verify, comment.new)
 
+router.route('/comments/:commentid')
+  .delete(login.verify, comment.delete)
+
 module.exports = router;
