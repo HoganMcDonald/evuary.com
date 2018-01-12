@@ -5,7 +5,7 @@ const User = require('./user.model');
 passport.use(new Strategy({
    clientID: process.env.CLIENT_ID,
    clientSecret: process.env.CLIENT_SECRET,
-   callbackURL: (process.env.NODE_ENV === 'development') ? 'http://localhost:3000/api/login/return' : 'http://evuary.com/api/login/return',
+   callbackURL: (process.env.NODE_ENV === 'development') ? 'http://localhost:3000/api/login/return' : 'http://evuary.herokuapp.com/api/login/return',
    profileFields: ['id', 'name', 'picture.type(small)', 'displayName', 'profileUrl']
  },
  function(accessToken, refreshToken, profile, done) {
