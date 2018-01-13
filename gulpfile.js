@@ -9,7 +9,7 @@ const destDir = 'public'; // final location from ./ where distribution files wil
 
 const scriptOrder = ['src/scripts/**/*.js'];
 const styleOrder = ['src/sass/main.sass'];
-const vendorOrder = ['src/vendors/jquery.min.js', 'src/vendors/bootstrap.bundle.min.js', 'src/vendors/angular.min.js', 'src/vendors/moment.min.js'];
+const vendorOrder = ['src/vendors/jquery.min.js', 'src/vendors/bootstrap.bundle.min.js', 'src/vendors/angular.min.js', 'src/vendors/moment.min.js', 'src/vendors/instafeed.min.js'];
 
 // dependencies
 const gulp = require('gulp'),

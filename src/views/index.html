@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Evuary 2018</title>
     <link rel="stylesheet" async href="/vendors/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/vendors/bootstrap-grid.min.css"> -->
+    <link rel="stylesheet" async href="/vendors/bootstrap-grid.min.css">
     <link rel="stylesheet" async href="/styles/main.min.css">
   </head>
 
@@ -36,7 +36,7 @@
               <a class="nav-link" href="#comments">Comment</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Follow</a>
+              <a class="nav-link" href="#follow">Follow</a>
             </li>
             <li class="nav-item" ng-if="login">
               <a class="nav-link disabled" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
@@ -134,10 +134,15 @@
         </div>
       </div>
 
+      <!-- follow -->
+      <div id="follow" class="follow">
+        <div id="instafeed" class="justify-content-center row"></div>
+      </div>
+
     </main>
 
+    <!-- footer -->
     <footer>
-
       <div class="container">
         <small>Developed by <a href="http://">Hogan McDonald</a> in Minneapolis</small>
         <small>Contact the developer to report any bugs <a href="mailto:hogan.developer@gmail.com">here.</a></small>
@@ -149,6 +154,20 @@
 
     <script src="/vendors/vendors.min.js" charset="utf-8"></script>
     <script src="bundle.min.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+      var feed = new Instafeed({
+        get: 'user',
+        userId: '54170338',
+        limit: 6,
+        resolution: 'standard_resolution',
+        accessToken: '54170338.1677ed0.52e33654f8a04f01984d02f01f1fc36d',
+        sortBy: 'most-recent',
+        template: '<a class="col-lg-2 col-md-4 col-sm-12" href="{{link}}"><div class="image-container" style="background-image: url({{image}})"></div></a>'
+      });
+      feed.run();
+    </script>
+
 
   </body>
 

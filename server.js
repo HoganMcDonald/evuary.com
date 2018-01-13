@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 
 // connect to db
 const db = mongoose.connect(process.env.MONGODB_URI).connection;
@@ -19,6 +20,7 @@ db.once('open', ()=> {
 
 // middleware
 app.use(express.static('public'));
+app.use(compression());
 app.use(require('morgan')('combined'));
 app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({ extended: true }));
