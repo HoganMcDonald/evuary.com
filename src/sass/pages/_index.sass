@@ -9,7 +9,7 @@ canvas
 
 #index
   margin: 0
-  width: 100%
+  width: 100vw
   main
     .landing
       height: 100vh
@@ -39,7 +39,7 @@ canvas
           transition: transform 400ms
           transition-timing-function: ease-out
     .about
-      height: 60vh
+      height: 100vh
       display: flex
       justify-content: center
       align-items: center
@@ -113,9 +113,6 @@ canvas
           background-position: center
           background-size: cover
 
-
-
-
 .position1
   transform: translate(-20px, -20px)
   .site-header
@@ -136,3 +133,94 @@ canvas
     transform: translateY(-50%) translate(200px, -250px)
   .img-fluid
     transform: translate(-40px, 40px)
+
+@media (max-width: 767px)
+  #index
+    font-size: 14px
+    main
+      .landing
+        .position1
+          transform: translate(-2vw, -2vw)
+          .img-fluid
+            transform: translate(4vw, 4vw)
+        .landing-img
+          max-width: 70vw
+          margin: 0px 20px
+          .site-header
+            top: -50%
+            left: 37vw
+            transform: translate(-50%, -50%)
+            text-align: center
+      .about
+      .comments
+        height: 100vh
+        grid-template-columns: auto
+        grid-template-rows: 80% 20%
+        .form
+          grid-row-start: 2
+          form
+            width: 95%
+            .form-group
+              display: grid
+              grid-template-columns: 80% 20%
+              margin-bottom: 0
+              textarea
+                align-self: center
+                justify-self: center
+                margin-bottom: 0
+              button
+                align-self: center
+                justify-self: center
+        .display
+          .container
+            height: 80%
+            width: 95%
+            margin-top: 50px
+            .comment
+              grid-template-columns: 35px 30px 30px auto 10px
+              grid-column-gap: 7px
+              small
+                margin-top: 9px
+
+@media (min-width: 768px) and (max-width: 992px)
+  #index
+    font-size: 18px
+    main
+      .landing
+        .landing-img
+          .site-header
+            top: 0
+            left: 20px
+            transform: translate(0, 0)
+            // text-align: center
+      .about
+        height: 60vh
+      .comments
+        height: 100vh
+        grid-template-columns: auto
+        grid-template-rows: 80% 20%
+        .form
+          grid-row-start: 2
+          form
+            width: 95%
+            .form-group
+              display: grid
+              grid-template-columns: 80% 20%
+              margin-bottom: 0
+              textarea
+                align-self: center
+                justify-self: center
+                margin-bottom: 0
+              button
+                align-self: center
+                justify-self: center
+        .display
+          .container
+            height: 80%
+            width: 95%
+            margin-top: 50px
+            .comment
+              grid-template-columns: 60px 30px 50px auto 10px
+              grid-column-gap: 7px
+              small
+                margin-top: 9px
