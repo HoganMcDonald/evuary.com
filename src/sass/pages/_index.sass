@@ -1,6 +1,12 @@
 *
   outline: none
 
+$width: 100vw / 6
+
+canvas
+  position: fixed
+  z-index: -1
+
 #index
   margin: 0
   width: 100%
@@ -66,6 +72,7 @@
           height: 80vh
           overflow-y: scroll
           border-radius: 5px
+          background-color: white
           .comment
             margin: 10px 0px
             display: grid
@@ -89,18 +96,23 @@
               user-select: none
               justify-self: center
     .follow
-      min-height: 60vh
       width: 100%
       display: flex
       align-items: center
-      .row
+      #instafeed
+        width: 100%
         margin: auto
-        margin-top: 2vh
-        .image-container
-          height: 200px
-          width: 200px
-          background-size: cover
+        display: grid
+        grid-template-columns: auto auto auto auto auto auto
+        grid-template-rows: $width $width
+        .image
+          height: 100%
+          width: 100%
           background-position: center
+          background-repeat: no-repeat
+          background-position: center
+          background-size: cover
+
 
 
 

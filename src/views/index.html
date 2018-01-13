@@ -10,6 +10,9 @@
 
   <body id="index" ng-controller="evuary" ng-init="getUser(); getComments()">
 
+    <!-- particle overlay -->
+    <div id="particles-js"></div>
+
     <main>
 
       <!-- first content block -->
@@ -136,7 +139,7 @@
 
       <!-- follow -->
       <div id="follow" class="follow">
-        <div id="instafeed" class="justify-content-center row"></div>
+        <div id="instafeed"></div>
       </div>
 
     </main>
@@ -152,6 +155,7 @@
       </div>
     </footer>
 
+    <!-- scripts -->
     <script src="/vendors/vendors.min.js" charset="utf-8"></script>
     <script src="bundle.min.js" charset="utf-8"></script>
 
@@ -159,11 +163,11 @@
       var feed = new Instafeed({
         get: 'user',
         userId: '54170338',
-        limit: 6,
+        limit: 12,
         resolution: 'standard_resolution',
         accessToken: '54170338.1677ed0.52e33654f8a04f01984d02f01f1fc36d',
         sortBy: 'most-recent',
-        template: '<a class="col-lg-2 col-md-4 col-sm-12" href="{{link}}"><div class="image-container" style="background-image: url({{image}})"></div></a>'
+        template: '<a class="image" href="{{link}}" style="background-image: url({{image}})"></a>'
       });
       feed.run();
     </script>

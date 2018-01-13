@@ -9,7 +9,7 @@ const destDir = 'public'; // final location from ./ where distribution files wil
 
 const scriptOrder = ['src/scripts/**/*.js'];
 const styleOrder = ['src/sass/main.sass'];
-const vendorOrder = ['src/vendors/jquery.min.js', 'src/vendors/bootstrap.bundle.min.js', 'src/vendors/angular.min.js', 'src/vendors/moment.min.js', 'src/vendors/instafeed.min.js'];
+const vendorOrder = ['src/vendors/jquery.min.js', 'src/vendors/bootstrap.bundle.min.js', 'src/vendors/angular.min.js', 'src/vendors/moment.min.js', 'src/vendors/instafeed.min.js', 'src/vendors/particles.js'];
 
 // dependencies
 const gulp = require('gulp'),
@@ -152,7 +152,7 @@ gulp.task('vendors', ['vendors:style'], ()=> {
 });
 
 gulp.task('vendors:style', ()=> {
-  gulp.src(`${srcDir}/vendors/*.css`)
+  gulp.src([`${srcDir}/vendors/*.css`, `${srcDir}/vendors/*.json`])
     .pipe(gulp.dest(`${destDir}/vendors`))
     .pipe(browserSync.reload({
       stream: true
