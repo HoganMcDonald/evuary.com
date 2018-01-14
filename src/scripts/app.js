@@ -11,6 +11,7 @@ app.controller('evuary', ['$scope', '$http' ,function($scope, $http) {
   $scope.getUser = ()=> {
     $http.get('/api/profile')
       .then( res => {
+        console.log(res);
         if (res.data) {
           $scope.login = false;
           $scope.user = res.data;
