@@ -21,7 +21,7 @@ db.once('open', ()=> {
 // middleware
 app.use(express.static('public'));
 app.use(compression());
-app.use(require('morgan')('combined'));
+// app.use(require('morgan')('combined'));
 app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
